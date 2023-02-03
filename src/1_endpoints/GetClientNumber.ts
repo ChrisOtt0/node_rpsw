@@ -10,8 +10,8 @@ class GetClientNumber extends BaseHandler{
         if (isNaN(clientNumber)) {
             response.status(404).json("Error: The value must be an integer.");
         }
-        if (clientNumber < 0 || clientNumber > 2) {
-            response.status(404).json("Error: Choose a value from 0 to 2.");
+        if (clientNumber < 0 || clientNumber > 3) {
+            response.status(404).json("Error: Choose a value from 0 to 3.");
         }
 
         super.getGame().setClientHand(clientNumber);

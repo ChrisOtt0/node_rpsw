@@ -1,6 +1,7 @@
 const enum Hand{
-    "Rock"=1,
-    "Paper"=0,
-    "Scissors"=2
+    "Rock"=0,
+    "Paper"=1,
+    "Scissors"=2,
+    "Well"=3,
 }
 export {Hand}
