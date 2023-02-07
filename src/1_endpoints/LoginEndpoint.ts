@@ -21,8 +21,8 @@ class LoginEndpoint {
 
             // action 3, 4, 5
             if (accepted) {
-                const token: string = request.cookies.tokenKey;
                 const thisToken: string = Session.generateToken(userName);
+                console.log(thisToken);
                 console.debug(Session.getUserName(thisToken));
                 response.cookie('tokenKey', thisToken);
             }
