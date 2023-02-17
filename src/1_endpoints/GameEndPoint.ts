@@ -1,3 +1,4 @@
+import { CheckAuth } from "./CheckAuth";
 import { FindWinner } from "./FindWinner";
 import { GetClientNumber } from "./GetClientNumber";
 import { PickRandomHand } from "./PickRandomHand";
@@ -6,7 +7,9 @@ import { SetGameResult } from "./SetGameResult";
 class GameEndpoint{
 
     public static play(request:any, response:any):any{
-
+        // handler # 0
+        const checkAuth: CheckAuth = new CheckAuth();
+        
         // handler # 1
         const getClientNumber:GetClientNumber = new GetClientNumber();
 
@@ -20,7 +23,8 @@ class GameEndpoint{
         const setGameResult:SetGameResult = new SetGameResult();
 
         // Defining the chain of actions:
-
+        // handler #0 -> #1
+        checkAuth.setNext(getClientNumber);
         // handler #1 -> #2
         getClientNumber.setNext(pickRandomHand);
         // handler #2 -> #3
